@@ -25,3 +25,13 @@ CREATE TABLE financas.lancamento
 );
 
 INSERT INTO financas.usuario VALUES (1, 'usuario', 'usuario@email.com', '123456')
+INSERT INTO financas.usuario VALUES (2, 'luis', 'luis@email.com', '123456');
+INSERT INTO financas.usuario VALUES (3, 'ana', 'ana@email.com', '123456');
+INSERT INTO financas.usuario VALUES (4, 'lucas', 'lucas@email.com', '123456');
+
+INSERT INTO financas.lancamento values (1, 'serviço prestado', 08, 2021, 100.00, 'RECEITA', 'EFETIVADO', 1)
+INSERT INTO financas.lancamento values (2, 'cortar grama', 06, 2021, 80.00, 'RECEITA', 'CANCELADO', 2);
+INSERT INTO financas.lancamento values (3, 'Venda de Produto', 05, 2021, 100.00, 'RECEITA', 'PENDENTE', 3);
+INSERT INTO financas.lancamento values (4, 'compra', 02, 2021, 100.00, 'DESPESA', 'EFETIVADO', 4);
+INSERT INTO financas.lancamento values (5, 'Escola', 08, 2021, 50.00, 'DESPESA', 'EFETIVADO', 1);
+
