@@ -18,7 +18,6 @@ class Login extends React.Component{
         super();
         this.service = new UsuarioService();
     }
-    
     entrar = async () =>{
         this.service.autenticar({
             email: this.state.email,
