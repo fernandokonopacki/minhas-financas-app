@@ -1,17 +1,18 @@
 import React from 'react'
-import { options } from 'toastr'
 
-export default (props) => {
+const selectMenu = (props) => {
     
-    const options = props.lista.map(option =>{
+    const options = props.lista.map((option, index) => {
         return(
-            <option value={option.value}>{option.label}</option>
+            <option key={index} value={option.value}>{option.label}</option>
         )
     })
-    
-    return(
+
+    return (
         <select {...props}>
             {options}
         </select>
     )
 }
+
+export default selectMenu;

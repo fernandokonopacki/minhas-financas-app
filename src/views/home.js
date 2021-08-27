@@ -18,8 +18,8 @@ class Home extends React.Component{
         const usuarioLogado = LocalStorageService.obterItem('_usuario_logado')
 
         this.UsuarioService.obterSaldoPorUsuario(usuarioLogado.id)
-        .then(retorno => {
-            this.setState({saldo: retorno.data})
+        .then(response  => {
+            this.setState({saldo: response.data})
         }).catch(error => {
             console.log(error.response);
         })
@@ -40,7 +40,7 @@ class Home extends React.Component{
                         Cadastrar Usuário
                     </a>
                     <a className="btn btn-danger btn-lg" 
-                        href="https://bootswatch.com/flatly/#" 
+                        href="#/cadastro-lancamento" 
                         role="button"><i className="fa fa-users"></i>  
                         Cadastrar Lançamento
                     </a>

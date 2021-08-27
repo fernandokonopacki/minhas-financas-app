@@ -1,4 +1,5 @@
 import ApiService from '../apiservice'
+import ErroValidacao from '../exception/ErroValidacao'
 
 class usuarioService extends ApiService{
 
@@ -16,6 +17,29 @@ class usuarioService extends ApiService{
 
     salvar(usuario){
         return this.post('/', usuario);
+    }
+
+    validar(usuario){
+        const erros = []
+
+        if(!usuario.nome){
+            erros.push("O campo Nome é Obrigatório");
+        }
+        if(!usuario.email){
+            erros.push("O campo Email é Obrigatório");
+        }else if(!usuario.email.match(/^[a-z0-9.]+@[a-z0-9]+\.[a-z]/)){
+            erros.push("Informe um e-mail válido");
+        }
+
+        if(!usuario.senha || !usuario.senhaRepeticao){
+            erros.push("Digite a senha 2x")
+        }else if(usuario.senha !== usuario.senhaRepeticao){
+            erros.push("A senha é diferente da confirmação");
+        }
+
+        if(erros && erros.length > 0){
+            throw new ErroValidacao(erros);
+        }
     }
 }
 
