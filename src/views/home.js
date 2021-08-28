@@ -1,7 +1,6 @@
 import React from 'react'
 
 import UsuarioService from '../app/service/usuarioService'
-import LocalStorageService from '../app/service/localStorageService'
 import { AuthContext } from '../main/provedorDeAutenticacao'
 
 class Home extends React.Component{

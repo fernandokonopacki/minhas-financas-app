@@ -2,7 +2,6 @@ import React from 'react'
 
 import Login from '../views/login'
 import Home from '../views/home'
-import AuthService from '../app/service/authService'
 import CadastroUsuario from '../views/cadastroUsuario'
 import ConsultaLancamentos from '../views/lancamentos/consulta-lancamentos'
 import CadastroLancamento from '../views/lancamentos/cadastro-lancamento'
