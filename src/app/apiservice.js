@@ -1,12 +1,21 @@
 import Axios from 'axios'
 
+const baseURL = process.env.REACT_APP_API_URL
+
 const httpClient = Axios.create({
-    baseURL: 'http://localhost:8080'
+    baseURL: 'http://localhost:8080',
+    withCredentials: true
 })
 
 class ApiService {
     constructor(apiurl){
         this.apiurl = apiurl;
+    }
+
+    static registrarToken(token){
+        if(token){
+            httpClient.defaults.headers.common['Authorization'] = `Bearer ${token}`
+        }
     }
 
     post(url, objeto){
